@@ -1,9 +1,11 @@
 version: '3'
 services:
   nextjs:
-    build: ./
+    image: dylanchau/docker-demo:latest
   
   nginx:
-    build: ./nginx
+    image: dylanchau/docker-nginx-demo:latest
+    depends_on:
+      - nextjs
     ports:
       - 80:80
